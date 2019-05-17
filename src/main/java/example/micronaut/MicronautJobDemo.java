@@ -17,9 +17,4 @@ public class MicronautJobDemo {
     void executeEveryTen() {
         LOG.info("Simple Job every 10 seconds");
     }
-
-    @Scheduled(fixedDelay = "45s", initialDelay = "5s")
-    void executeEveryFourtyFive() {
-        LOG.info("Simple Job every 45 seconds");
-    }
 }
