@@ -6,15 +6,18 @@ import org.slf4j.LoggerFactory;
 
 import javax.inject.Singleton;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Calendar;
 
 @Singleton
 public class MicronautJobDemo {
 
-    private static final Logger LOG = LoggerFactory.getLogger(MicronautJobDemo.class);
+    private static final Logger log = LoggerFactory.getLogger(MicronautJobDemo.class);
 
     @Scheduled(fixedDelay = "10s")
     void executeEveryTen() {
-        LOG.info("Simple Job every 10 seconds");
+        log.info("Simple Job every 10 seconds");
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        log.info("Job execution time: {} ", sdf.format(cal.getTime()));
     }
 }

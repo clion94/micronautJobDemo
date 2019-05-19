@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import javax.inject.Inject;
 
 @MicronautTest
-public class ControllerDemoTest {
+public class ApplicationControllerTest {
 
     @Inject
     @Client("/")
@@ -24,6 +24,6 @@ public class ControllerDemoTest {
         String body = client.toBlocking().retrieve(request);
 
         assertNotNull(body);
-        assertEquals(body, "Hello World");
+        assertEquals(body, "Job Started will run every 10 seconds..");
+        }
     }
-}
